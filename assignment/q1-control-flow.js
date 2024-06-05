@@ -14,12 +14,16 @@ let databaseCredential = "devuser:password";
 switch (env) {
     case 'DEV' :
         databaseCredential = "devuser:password";
+        break;
     case 'STAGE' :
         databaseCredential = "stageuser:password";
+        break;
     case'PROD' :
         databaseCredential = "produser:password";
+        break;
     default :
-        return null;
+        console.error("Unknown environment");
+        break;
 }
 
 console.log(`Database credential for environment ${env} is ${databaseCredential}`);
